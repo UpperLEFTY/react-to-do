@@ -1,32 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import './Todo.css';
+import React, { useState, useEffect } from "react";
+import "./Todo.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import faker from "faker";
 
-
-
-
 function Task({ task, index, completeTask, removeTask, FontAwesomeIcon }) {
   return (
-    <div className="task"
-      style={{ textDecoration: task.completed ? 'line-through' : '' }}>{task.title}
+    <div
+      className="task"
+      style={{ textDecoration: task.completed ? "line-through" : "" }}
+    >
+      {task.title}
       <div className="comments">
-       <icon />
-      <button style={{ background: 'red' }} onClick={() => removeTask(index)}></button>
-      <button style={{ FontAwesomeIcon: "fa fa-trash" }} onClick={() => completeTask(index)}></button>
-    </div>
+        <icon />
+        <button
+          style={{ background: "red" }}
+          onClick={() => removeTask(index)}
+        ></button>
+        <button
+          style={{ FontAwesomeIcon: "fa fa-trash" }}
+          onClick={() => completeTask(index)}
+        ></button>
+      </div>
     </div>
   );
 }
 
 function CreateTask({ addTask }) {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
 
   const handleSubmit = e => {
     e.preventDefault();
     if (!value) return;
     addTask(value);
-    setValue('');
+    setValue("");
   };
   return (
     <form onSubmit={handleSubmit}>
@@ -40,57 +46,51 @@ function CreateTask({ addTask }) {
     </form>
   );
 }
-  
+
 function Todo() {
   const [tasksRemaining, setTasksRemaining] = useState(0);
   const [tasks, setTasks] = useState([
-    { 
-      
-      title: 'Buy Milk',
+    {
+      title: "Buy Milk",
       completed: true
     },
     {
-      title: '06:30am Cycling class at Sats St. Olav',
+      title: "06:30am Cycling class at Sats St. Olav",
       completed: true
     },
     {
-      title: 'Meet Sondre for dinner',
-      completed: false
-     
-    },
-    {
-      title: 'Hike Trolltunga',
+      title: "Meet Sondre for dinner",
       completed: false
     },
     {
-      title: 'Finish this app',
+      title: "Hike Trolltunga",
+      completed: false
+    },
+    {
+      title: "Finish this app",
       completed: true
     },
     {
-      title: 'Have drinks with Jake',
+      title: "Have drinks with Jake",
       completed: false
-     
     },
     {
-      title: 'Call Mom',
+      title: "Call Mom",
       completed: true
     },
     {
-      title: 'Send in appeal',
+      title: "Send in appeal",
       completed: false
     },
     {
-      title: 'Order new License',
+      title: "Order new License",
       completed: false
-     
     }
   ]);
 
   useEffect(() => {
     setTasksRemaining(tasks.filter(task => !task.completed).length);
   });
-  
-  
 
   const addTask = title => {
     const newTasks = [...tasks, { title, completed: false }];
@@ -111,13 +111,14 @@ function Todo() {
 
   return (
     <div className="todo-container">
-      <div style={{backgroundColor: '#81C7F5'}} className="header">Pending tasks({tasksRemaining})</div>
+      <div style={{ backgroundColor: "#81C7F5" }} className="header">
+        Pending tasks({tasksRemaining})
+      </div>
       <div className="content"></div>
       <a href="/" className="avatar">
         <img alt="avatar" src={faker.image.avatar()} />
       </a>
       <div className="tasks">
-    
         {tasks.map((task, index) => (
           <Task
             task={task}
@@ -132,7 +133,6 @@ function Todo() {
         <CreateTask addTask={addTask} />
       </div>
     </div>
-    
   );
 }
 

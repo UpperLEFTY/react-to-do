@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Todo.css';
 
+
 function Task({ task, index, completeTask, removeTask }) {
   return (
     <div
@@ -10,9 +11,9 @@ function Task({ task, index, completeTask, removeTask }) {
       {task.title}
 
       <button style={{ background: 'red' }} onClick={() => removeTask(index)}>
-        x
+      
       </button>
-      <button onClick={() => completeTask(index)}>Complete</button>
+      <button onClick={() => completeTask(index)}></button>
     </div>
   );
 }
@@ -38,7 +39,7 @@ function CreateTask({ addTask }) {
     </form>
   );
 }
-
+  
 function Todo() {
   const [tasksRemaining, setTasksRemaining] = useState(0);
   const [tasks, setTasks] = useState([
@@ -53,6 +54,33 @@ function Todo() {
     {
       title: 'Meet Sondre for dinner',
       completed: false
+     
+    },
+    {
+      title: 'Hike Trolltunga',
+      completed: false
+    },
+    {
+      title: 'Finish this app',
+      completed: true
+    },
+    {
+      title: 'Have drinks with Jake',
+      completed: false
+     
+    },
+    {
+      title: 'Call Mom',
+      completed: true
+    },
+    {
+      title: 'Send in appeal',
+      completed: false
+    },
+    {
+      title: 'Order new License',
+      completed: false
+     
     }
   ]);
 

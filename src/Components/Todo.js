@@ -4,18 +4,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 
+
 function Task({ task, index, completeTask, removeTask }) {
   return (
-    <div
-      className="task"
-      style={{ textDecoration: task.completed ? 'line-through' : '' }}
-    >
-      {task.title}
-
+    <div className="task"
+      style={{ textDecoration: task.completed ? 'line-through' : '' }}>{task.title}
+      <div className="comments">
+      <a href="/" className="avatar"> 
+        <img alt="avatar"/>
+      </a>
       <button style={{ background: 'red' }} onClick={() => removeTask(index)}>
       
       </button>
       <button onClick={() => completeTask(index)}></button>
+    </div>
     </div>
   );
 }
@@ -111,7 +113,7 @@ function Todo() {
 
   return (
     <div className="todo-container">
-      <div className="header">Pending tasks ({tasksRemaining})</div>
+      <div style={{backgroundColor: '#81C7F5'}} className="header">Pending tasks ({tasksRemaining})</div>
       <div className="tasks">
         {tasks.map((task, index) => (
           <Task

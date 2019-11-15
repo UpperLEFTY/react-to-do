@@ -1,22 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import './Todo.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import faker from "faker";
 
 
 
 
-function Task({ task, index, completeTask, removeTask }) {
+function Task({ task, index, completeTask, removeTask, FontAwesomeIcon }) {
   return (
     <div className="task"
       style={{ textDecoration: task.completed ? 'line-through' : '' }}>{task.title}
       <div className="comments">
-      <a href="/" className="avatar"> 
-        <img alt="avatar"/>
-      </a>
-      <button style={{ background: 'red' }} onClick={() => removeTask(index)}>
-      
-      </button>
-      <button onClick={() => completeTask(index)}></button>
+       <icon />
+      <button style={{ background: 'red' }} onClick={() => removeTask(index)}></button>
+      <button style={{ FontAwesomeIcon: "fa fa-trash" }} onClick={() => completeTask(index)}></button>
     </div>
     </div>
   );
@@ -47,7 +44,8 @@ function CreateTask({ addTask }) {
 function Todo() {
   const [tasksRemaining, setTasksRemaining] = useState(0);
   const [tasks, setTasks] = useState([
-    {
+    { 
+      
       title: 'Buy Milk',
       completed: true
     },
@@ -113,8 +111,13 @@ function Todo() {
 
   return (
     <div className="todo-container">
-      <div style={{backgroundColor: '#81C7F5'}} className="header">Pending tasks ({tasksRemaining})</div>
+      <div style={{backgroundColor: '#81C7F5'}} className="header">Pending tasks({tasksRemaining})</div>
+      <div className="content"></div>
+      <a href="/" className="avatar">
+        <img alt="avatar" src={faker.image.avatar()} />
+      </a>
       <div className="tasks">
+    
         {tasks.map((task, index) => (
           <Task
             task={task}
@@ -129,6 +132,7 @@ function Todo() {
         <CreateTask addTask={addTask} />
       </div>
     </div>
+    
   );
 }
 

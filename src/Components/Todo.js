@@ -16,10 +16,7 @@ function Task({ task, index, completeTask, removeTask, FontAwesomeIcon }) {
           style={{ background: "red" }}
           onClick={() => removeTask(index)}
         ></button>
-        <button
-          style={{ FontAwesomeIcon: "fa fa-trash" }}
-          onClick={() => completeTask(index)}
-        ></button>
+      
       </div>
     </div>
   );

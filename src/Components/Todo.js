@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Todo.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import faker from "faker";
 
-function Task({ task, index, completeTask, removeTask, FontAwesomeIcon }) {
+
+function Task({ task, index, completeTask, removeTask}) {
   return (
     <div
       className="task"
@@ -16,7 +15,10 @@ function Task({ task, index, completeTask, removeTask, FontAwesomeIcon }) {
           style={{ background: "red" }}
           onClick={() => removeTask(index)}
         ></button>
-      
+        <button
+          style={{ FontAwesomeIcon: "fa fa-trash" }}
+          onClick={() => completeTask(index)}
+        ></button>
       </div>
     </div>
   );
@@ -112,9 +114,7 @@ function Todo() {
         Pending tasks({tasksRemaining})
       </div>
       <div className="content"></div>
-      <a href="/" className="avatar">
-        <img alt="avatar" src={faker.image.avatar()} />
-      </a>
+      
       <div className="tasks">
         {tasks.map((task, index) => (
           <Task

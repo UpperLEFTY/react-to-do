@@ -10,7 +10,7 @@ function Task({ task, index, completeTask, removeTask}) {
     >
       {task.title}
       <div className="comments">
-        <icon />
+        
         <button
           style={{ background: "red" }}
           onClick={() => removeTask(index)}

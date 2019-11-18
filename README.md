@@ -7,8 +7,7 @@ $ npm start or yarn start
 Built With
 React - JavaScript framework.
 
-### I wanted display my knowledge of hooks to show that we're able to use state inside the functional components to prevent re-calculating it every time the component updates.
-###  it provides improved code reuse, composition, and better defaults.
+# I wanted display my knowledge of hooks to show that we're able to use state inside the functional components to prevent re-calculating it every time the component updates. It provides improved code reuse, composition, and better defaults.
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

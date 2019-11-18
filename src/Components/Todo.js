@@ -6,7 +6,7 @@ function Task({ task, index, completeTask, removeTask}) {
   return (
     <div
       className="task"
-      style={{ textDecoration: task.completed ? "line-through" : "trash" }}
+      style={{ textDecoration: task.completed ? "line-through" : "" }}
     >
       {task.title}
       <div className="comments">
@@ -16,7 +16,7 @@ function Task({ task, index, completeTask, removeTask}) {
           onClick={() => removeTask(index)}
         ></button>
         <button
-          style={{ FontAwesomeIcon: "fa fa-trash" }}
+          style={{ background: "blue" }}
           onClick={() => completeTask(index)}
         ></button>
       </div>
@@ -51,14 +51,14 @@ function Todo() {
   const [tasks, setTasks, trash] = useState([
     {
       title: "Buy Milk",
-      completed: true
+      completed: false
     },
     {
       title: "06:30am Cycling class at Sats St. Olav",
       completed: true
     },
     {
-      title: "Meet Sondre for dinner",
+      title: "Meet friends for dinner",
       completed: false
     },
     {
@@ -67,14 +67,14 @@ function Todo() {
     },
     {
       title: "Finish this app",
-      completed: true
-    },
-    {
-      title: "Have drinks with Jake",
       completed: false
     },
     {
-      title: "Call Mom",
+      title: "Have drinks with Jake",
+      completed: true
+    },
+    {
+      title: "Call Mom on her birthday",
       completed: true
     },
     {
@@ -84,6 +84,14 @@ function Todo() {
     {
       title: "Order new License",
       completed: false
+    },
+    {
+      title: "Drive to Grand Canyon",
+      completed: true
+    },
+    {
+      title: "Do laundry",
+      completed: true
     }
   ]);
 

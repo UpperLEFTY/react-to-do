@@ -114,7 +114,6 @@ function Todo() {
     <div className="todo-container">
       <div style={{ backgroundColor: "#81C7F5" }} className="header">
         Pending tasks({tasksRemaining})
-        
       </div>
       <div className="content"></div>
       
@@ -124,9 +123,9 @@ function Todo() {
           <Task
             task={task}
             index={index}
-            icon={`${icon} icon`}
             completeTask={completeTask}
             removeTask={removeTask}
+            icon={` ${icon} icon`}
             key={index}
           />
         ))}

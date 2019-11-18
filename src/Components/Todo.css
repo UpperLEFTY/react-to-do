@@ -12,6 +12,7 @@ body {
   color: grey;
   border: 3px solid #F9FCFF;
   display: block;
+
 }
 .task {
   border: 1px solid rgb(167, 165, 165);
@@ -44,7 +45,7 @@ body {
 
 .create-task input[type=text] {
   margin: 2.5em 2em;
-  width: 95%;
+  width: 85%;
   outline: none;
   border-radius: 5px;
   padding: 0.7em;

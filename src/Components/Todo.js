@@ -112,13 +112,12 @@ function Todo() {
 
   return (
     <div className="todo-container">
-      <div style={{ backgroundColor: "#81C7F5" }} className="header">
+      <div style={{ backgroundColor: "" }} className="header">
         Pending tasks({tasksRemaining})
       </div>
       <div className="content"></div>
       
       <div className="tasks">
-      <i className={` ${icon} icon`} />
         {tasks.map((task, index) => (
           <Task
             task={task}

@@ -8,7 +8,7 @@
 ### React - JavaScript framework.
 
  I wanted display my knowledge of hooks to show that we're able to use state inside functional components to prevent re-calculating it every time the component updates. It provides improved code reuse, composition, and better defaults. 
- Rather than use complicated multi-line if-else statements, I felt my code could be simplified by using more concise methods by using ternary expressions, I feel like it made the conditional rendering much easier than with a tradtional if-else statements. Within this app you should be able to add tasks, delete tasks and remove tasks. I didn't do much styling in the app with specifics, although I should have.
+ Rather than use complicated multi-line if-else statements, I felt my code could be simplified by using more concise methods by using ternary expressions, I feel like it made the conditional rendering much easier than with a tradtional if-else statements. Within this app you should be able to add tasks, delete tasks and remove tasks. When clicking the blue button it indicates completion of the task. The red button removes the tasks. When reloading the page the tasks appear back in place. The text input at the bottom of the page enables a task to be written in but it won't have a hard coded value within the state of the application. I didn't do much styling in the app with specifics, although I should have. 
 
 
 

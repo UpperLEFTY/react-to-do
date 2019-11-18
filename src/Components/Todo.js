@@ -6,7 +6,7 @@ function Task({ task, index, completeTask, removeTask}) {
   return (
     <div
       className="task"
-      style={{ textDecoration: task.completed ? "line-through" : "" }}
+      style={{ textDecoration: task.completed ? "line-through" : "trash" }}
     >
       {task.title}
       <div className="comments">
@@ -48,7 +48,7 @@ function CreateTask({ addTask }) {
 
 function Todo() {
   const [tasksRemaining, setTasksRemaining] = useState(0);
-  const [tasks, setTasks] = useState([
+  const [tasks, setTasks, trash] = useState([
     {
       title: "Buy Milk",
       completed: true
@@ -108,18 +108,23 @@ function Todo() {
     setTasks(newTasks);
   };
 
+  const icon  = trash === 'trashoutline' ? 'trashalternative' : 'trash';
+
   return (
     <div className="todo-container">
       <div style={{ backgroundColor: "#81C7F5" }} className="header">
         Pending tasks({tasksRemaining})
+        
       </div>
       <div className="content"></div>
       
       <div className="tasks">
+      <i className={` ${icon} icon`} />
         {tasks.map((task, index) => (
           <Task
             task={task}
             index={index}
+            icon={`${icon} icon`}
             completeTask={completeTask}
             removeTask={removeTask}
             key={index}

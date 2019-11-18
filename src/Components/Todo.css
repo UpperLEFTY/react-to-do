@@ -1,5 +1,5 @@
 body {
-  background: rgb(255, 173, 65);
+  background: rgb(65, 201, 255);
 }
 
 .todo-container {
@@ -44,9 +44,9 @@ body {
 
 .create-task input[type=text] {
   margin: 2.5em 2em;
-  width: 80%;
+  width: 95%;
   outline: none;
-  border: none;
+  border-radius: 5px;
   padding: 0.7em;
 }
 
@@ -55,7 +55,4 @@ body {
   margin-bottom: auto;
   
 }
-.img {
-    resize: .05px;
-    
-}
+

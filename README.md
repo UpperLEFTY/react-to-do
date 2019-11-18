@@ -7,6 +7,9 @@ $ npm start or yarn start
 Built With
 React - JavaScript framework.
 
+### I wanted display my knowledge of hooks to show that we're able to use state inside the functional components to prevent re-calculating it every time the component updates.
+###  it provides improved code reuse, composition, and better defaults.
+
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
@@ -20,6 +23,6 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ### `yarn build`
 
-### Making a Progressive Web App
+
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app

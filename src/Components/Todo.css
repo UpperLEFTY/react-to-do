@@ -1,25 +1,41 @@
 body {
-  background: rgb(65, 201, 255);
+  top: -105px, 0px;
+  left: -80px, 0px;
+  width: 211px, 375px;
+  height: 211px 812px;
+ 
 }
 
 .todo-container {
-  background: rgb(247, 244, 244);
   width: 40vw;
-  height: 820px;
   margin: 10em auto;
   border-radius: 15px;
   padding: 20px 15px;
   color: grey;
   border: 3px solid #F9FCFF;
   display: block;
-
+  top: 0px;
+  left: 0px;
+  width: 375px;
+  height: 820px;
+  background: rgba(249, 252, 255, 1) 0% 0% no-repeat padding-box;
+  opacity: 1;
+  
 }
 .task {
   border: 1px solid rgb(167, 165, 165);
   border-radius: 5px;
   padding: 0.5em;
   margin: 0.5em;
+  height: 55.21px;
+  width: 339px;
+  overflow-y: 151px !important;
+  overflow-x: 18px !important;
+  background: rgba(0, 0, 0, 0.05);
+  
 }
+
+
 
 .task button {
   background: rgb(12, 124, 251);
@@ -39,8 +55,15 @@ body {
 
 .header {
   margin: 0.5em;
+  width: 339px;
+  height: 40px;
+  overflow-x: 18px;
+  overflow-y: 55px;
   font-size: 2em;
   text-align: center;
+  padding-top: 50px;
+   background: rgba(129, 199, 245, 1);
+   opacity: 1;
 }
 
 .create-task input[type=text] {
@@ -49,11 +72,5 @@ body {
   outline: none;
   border-radius: 5px;
   padding: 0.7em;
-}
-
-.header {
-  margin-top:  50px;
-  margin-bottom: auto;
-  
 }
 

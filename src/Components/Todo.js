@@ -12,11 +12,11 @@ function Task({ task, index, completeTask, removeTask}) {
       <div className="comments">
         
         <button
-          style={{ background: "red" }}
+          style={{ icon: task.completed ? "trash" : "" }}
           onClick={() => removeTask(index)}
         ></button>
         <button
-          style={{ background: "blue" }}
+          style={{icon: task}}
           onClick={() => completeTask(index)}
         ></button>
       </div>
@@ -89,10 +89,7 @@ function Todo() {
       title: "Drive to Grand Canyon",
       completed: true
     },
-    {
-      title: "Do laundry",
-      completed: true
-    }
+    
   ]);
 
   useEffect(() => {
@@ -121,7 +118,7 @@ function Todo() {
   return (
     <div className="todo-container">
       <div style={{ backgroundColor: "" }} className="header">
-        Pending tasks({tasksRemaining})
+    
       </div>
       <div className="content"></div>
       

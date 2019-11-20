@@ -1,24 +1,23 @@
 import React, { useState, useEffect } from "react";
 import "./Todo.css";
+import "./Checkbox.js";
+import Checkbox from '@material-ui/core/Checkbox';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
 
 
-function Task({ task, index, completeTask, removeTask}) {
+function Task({ task, index, completeTask, removeTask, CheckboxContainer, HiddenCheckbox, Icon, StyledCheckbox}) {
   return (
     <div
       className="task"
-      style={{ textDecoration: task.completed ? "line-through" : "" }}
+      style={{ textDecoration: task.completed ? "" : "" }}
     >
       {task.title}
       <div className="comments">
+
         
-        <button
-          style={{ icon: task.completed ? "trash" : "" }}
-          onClick={() => removeTask(index)}
-        ></button>
-        <button
-          style={{icon: task}}
-          onClick={() => completeTask(index)}
-        ></button>
       </div>
     </div>
   );
@@ -33,6 +32,7 @@ function CreateTask({ addTask }) {
     addTask(value);
     setValue("");
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <input
@@ -41,6 +41,7 @@ function CreateTask({ addTask }) {
         value={value}
         placeholder="Add a new task"
         onChange={e => setValue(e.target.value)}
+
       />
     </form>
   );
@@ -113,7 +114,22 @@ function Todo() {
     setTasks(newTasks);
   };
 
-  const icon  = trash === 'trashoutline' ? 'trashalternative' : 'trash';
+  function FormControlLabelPosition() {
+    return (
+      <FormControl component="fieldset">
+        <FormLabel component="legend">Label Placement</FormLabel>
+        <FormGroup aria-label="position" row>
+          <FormControlLabel
+            value="top"
+            control={<Checkbox color="primary" />}
+            label="Top"
+            labelPlacement="top"
+          />
+          </FormGroup>
+    </FormControl>
+    
+
+    )};
 
   return (
     <div className="todo-container">
@@ -121,7 +137,7 @@ function Todo() {
     
       </div>
       <div className="content"></div>
-      
+
       <div className="tasks">
         {tasks.map((task, index) => (
           <Task
@@ -129,7 +145,6 @@ function Todo() {
             index={index}
             completeTask={completeTask}
             removeTask={removeTask}
-            icon={` ${icon} icon`}
             key={index}
           />
         ))}
